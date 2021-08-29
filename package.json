@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/node": "^16.7.5",
     "date-fns": "^2.23.0",
     "gray-matter": "^4.0.3",
     "next": "11.1.0",
