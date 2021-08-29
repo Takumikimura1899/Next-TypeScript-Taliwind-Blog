@@ -13,11 +13,14 @@ export default function Post({
     <Layout>
       <Head>{postData.title}</Head>
       <article>
-        <h1 className="headingXl">{postData.title}</h1>
-        <div className="lightText">
+        <h1>{postData.title}</h1>
+        <div className="text-gray-500 mb-8">
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div
+          className="text-xl"
+          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+        />
       </article>
     </Layout>
   );

@@ -15,7 +15,7 @@ export default function Layout({
   home?: boolean;
 }) {
   return (
-    <div className="container">
+    <div className="max-w-xl px-4 mt-12 mx-auto mb-24">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -31,18 +31,20 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className="header">
+      <header className="flex flex-col items-center">
         {home ? (
           <>
             <Image
               priority
               src="/images/profile.jpg"
-              className="borderCircle"
+              className="rounded-full"
               height={144}
               width={144}
               alt={name}
             />
-            <h1 className="heading2xl">{name}</h1>
+            <h1 className="text-4xl font-extrabold tracking-tighter my-4 ">
+              {name}
+            </h1>
           </>
         ) : (
           <>
@@ -51,16 +53,16 @@ export default function Layout({
                 <Image
                   priority
                   src="/images/profile.jpg"
-                  className="borderCircle"
+                  className="rounded-full"
                   height={108}
                   width={108}
                   alt={name}
                 />
               </a>
             </Link>
-            <h2 className="headingLg">
+            <h2 className="text-2xl my-4">
               <Link href="/">
-                <a className="colorInherit">{name}</a>
+                <a className="text-indigo-500">{name}</a>
               </Link>
             </h2>
           </>
@@ -68,7 +70,7 @@ export default function Layout({
       </header>
       <main>{children}</main>
       {!home && (
-        <div className="backToHome">
+        <div className="mt-12">
           <Link href="/">
             <a>← Back to home</a>
           </Link>

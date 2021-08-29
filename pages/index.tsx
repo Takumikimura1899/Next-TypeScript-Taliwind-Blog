@@ -28,23 +28,23 @@ export default function Home({ allPostsData }: Props) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className="headingMd">
+      <section className="text-xl">
         <p>**Your Self Introduction**</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-      <section className="`${headingMd} ${padding1px}`">
-        <h2 className="headingLg">Blog</h2>
-        <ul className="utilStyles.list">
-          {allPostsData.map(({ id, date, title }: any) => (
-            <li className="listItem" key={id}>
+      <section className="text-xl pt-1">
+        <h2 className="text-xl my-4">Blog</h2>
+        <ul className="list-none p-0 m-0">
+          {allPostsData.map(({ id, date, title }) => (
+            <li className="mx-5" key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small className="lightText">
+              <small className="text-gray-400">
                 <Date dateString={date} />
               </small>
             </li>
